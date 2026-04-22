@@ -1,0 +1,11 @@
+{
+    "user_id": "0x1084650",
+    "offender_type": "COMMERCIAL_SCALE",
+    "evidence": {
+        "user_hash": "0x1084650",
+        "device_hash": "0x22c8810b",
+        "tier_indicator": 164,
+        "session_ts": 1738549506,
+        "region_hash": "0x1c2038"
+    }
+}
