@@ -1,9 +1,25 @@
+# Core
 __pycache__/
 *.py[cod]
 *$py.class
-ares_ledger.json
-test_ledger.json
-.vscode/
-.idea/
+.DS_Store
+
+# Virtual Environments
 venv/
 env/
+
+# IDEs
+.vscode/
+.idea/
+
+# ARES Generated Files
+ares_ledger.json
+test_ledger.json
+
+# Remote/Other Project Files
+*.pkl
+.env
+.ipynb_checkpoints/
+*.keras
+model/
+final_implementation/*.keras
