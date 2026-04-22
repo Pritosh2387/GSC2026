@@ -2,6 +2,8 @@
 
 SportGuard AI is a comprehensive security suite designed to protect live sports broadcasts and premium content from unauthorized distribution. It combines individual stream protection with large-scale network detection.
 
+---
+
 ## Key Features
 
 ### 1. Multi-Layer Fingerprinting
@@ -22,100 +24,90 @@ Invisible session-specific watermarking across three domains:
 Moves beyond individual leaks to dismantle piracy organizations:
 - **Knowledge Graph**: Maps relationships between accounts, IPs, devices, and payments.
 - **Pattern Recognition**:
-  - **Upload Velocity**: Detects robotic automated posting.
-  - **Similarity Clustering**: Grouping accounts by shared content hashing.
-  - **Temporal Coordination**: Detecting coordinated schedules across "separate" accounts.
-- **Predictive Replacements**: ML models identify new replacement accounts based on historical network patterns.
+  - **Upload Velocity**: Detects automated posting.
+  - **Similarity Clustering**: Groups accounts via shared fingerprints.
+  - **Temporal Coordination**: Detects coordinated activity.
+- **Predictive Replacements**: ML models identify new accounts replacing banned ones.
+
+---
 
 ## Modular Architecture
-- `sportguard/fingerprinting/`: Engines for content identification.
-- `sportguard/watermarking/`: Forensic embedding and extraction pipelines.
-- `sportguard/network/`: Graph analytics and network dismantling protocols.
-- `sportguard/attribution/`: Automated response and legal evidence generation.
 
-## System Architecture Diagram
+- `sportguard/fingerprinting/`: Content identification engines  
+- `sportguard/watermarking/`: Forensic embedding pipelines  
+- `sportguard/network/`: Graph analytics and detection  
+- `sportguard/attribution/`: Enforcement and legal evidence  
+
+---
+
+# 🔍 Detection Pipeline (Core Intelligence)
+
+This diagram shows how raw broadcast content is analyzed, fingerprinted, and used to detect piracy networks.
 
 ```mermaid
 flowchart TD
 
-subgraph group_entry["Entry points"]
-  node_main["Main<br/>entrypoint<br/>[main.py]"]
-  node_api["API<br/>entrypoint<br/>[api.py]"]
-  node_demo["Demo<br/>entrypoint<br/>[demo_sportguard.py]"]
-end
+node_source(("Broadcast Source"))
+node_fp_engine["Fingerprinting Engine"]
 
-subgraph group_ares["ARES layer"]
-  node_ares_orchestrator["Orchestrator<br/>workflow<br/>[orchestrator.py]"]
-  node_ares_engine["Engine<br/>runtime<br/>[engine.py]"]
-  node_ares_ledger[("Ledger<br/>state-store<br/>[ledger.py]")]
-  node_ares_models["Models<br/>schema<br/>[models.py]"]
-  node_meta_adapter["Meta<br/>adapter<br/>[meta_adapter.py]"]
-  node_tiktok_adapter["TikTok<br/>adapter<br/>[tiktok_adapter.py]"]
-  node_youtube_adapter["YouTube<br/>adapter<br/>[youtube_adapter.py]"]
-  node_external_platforms(("Platforms<br/>external-systems"))
-end
+node_visual["Visual Features"]
+node_audio["Audio Features"]
+node_temporal["Temporal Features"]
+node_semantic["Semantic Features"]
 
-subgraph group_sportguard["SportGuard core"]
-  node_fp_engine["FP Engine<br/>pipeline<br/>[engine.py]"]
-  node_fp_visual["Visual<br/>feature-extractor<br/>[visual.py]"]
-  node_fp_audio["Audio<br/>feature-extractor<br/>[audio.py]"]
-  node_fp_temporal["Temporal<br/>feature-extractor<br/>[temporal.py]"]
-  node_fp_semantic["Semantic<br/>feature-extractor<br/>[semantic.py]"]
-  node_fp_fusion["Fusion<br/>signature-fuser<br/>[fusion.py]"]
-  node_wm_embedder["Embedder<br/>pipeline<br/>[embedder.py]"]
-  node_wm_encoder["Encoder<br/>[encoder.py]"]
-  node_wm_luminance["Luminance<br/>watermark-channel<br/>[luminance.py]"]
-  node_wm_wt["Timing<br/>watermark-channel<br/>[temporal.py]"]
-  node_wm_audio["Audio WM<br/>watermark-channel<br/>[audio.py]"]
-  node_net_graph(("Graph<br/>[graph.py]"))
-  node_net_detection["Detection<br/>analyzer<br/>[detection.py]"]
-  node_net_predictive["Predictive<br/>risk-model<br/>[predictive.py]"]
-  node_net_protocol["Protocol<br/>policy<br/>[protocol.py]"]
-  node_attr_workflow["Workflow<br/>enforcement-flow<br/>[workflow.py]"]
-  node_attr_response["Response<br/>policy-engine<br/>[response.py]"]
-  node_content_sources(("Broadcast<br/>source-domain"))
-end
+node_fusion["Signature Fusion"]
 
-subgraph group_evidence["Evidence"]
-  node_commercial_evidence["Leaker cases<br/>evidence-store"]
-  node_network_evidence["Network case<br/>evidence-store"]
-end
+node_graph["Content Graph"]
+node_detection["Network Detection"]
+node_predictive["Predictive Model"]
 
-node_main -->|"runs"| node_ares_orchestrator
-node_api -->|"serves"| node_ares_engine
-node_demo -->|"demonstrates"| node_fp_engine
-node_ares_orchestrator -->|"coordinates"| node_ares_engine
-node_ares_orchestrator -->|"records"| node_ares_ledger
-node_ares_engine -->|"normalizes"| node_ares_models
-node_ares_engine -->|"ingests"| node_meta_adapter
-node_ares_engine -->|"ingests"| node_tiktok_adapter
-node_ares_engine -->|"ingests"| node_youtube_adapter
-node_meta_adapter -.->|"connects"| node_external_platforms
-node_tiktok_adapter -.->|"connects"| node_external_platforms
-node_youtube_adapter -.->|"connects"| node_external_platforms
-node_external_platforms -.->|"feeds"| node_content_sources
-node_content_sources -->|"analyzed by"| node_fp_engine
-node_fp_engine -->|"extracts"| node_fp_visual
-node_fp_engine -->|"extracts"| node_fp_audio
-node_fp_engine -->|"extracts"| node_fp_temporal
-node_fp_engine -->|"extracts"| node_fp_semantic
-node_fp_visual -->|"fuses"| node_fp_fusion
-node_fp_audio -->|"fuses"| node_fp_fusion
-node_fp_temporal -->|"fuses"| node_fp_fusion
-node_fp_semantic -->|"fuses"| node_fp_fusion
-node_wm_embedder -->|"builds"| node_wm_encoder
-node_wm_embedder -->|"embeds"| node_wm_luminance
-node_wm_embedder -->|"embeds"| node_wm_wt
-node_wm_embedder -->|"embeds"| node_wm_audio
-node_fp_fusion -->|"correlates"| node_net_graph
-node_net_graph -->|"analyzed by"| node_net_detection
-node_net_detection -->|"projects"| node_net_predictive
-node_net_detection -->|"conforms to"| node_net_protocol
-node_net_detection -->|"triggers"| node_attr_workflow
-node_attr_workflow -->|"decides"| node_attr_response
-node_attr_response -->|"persists"| node_commercial_evidence
-node_net_detection -->|"persists"| node_network_evidence
-node_attr_response -->|"supports"| node_commercial_evidence
+node_source --> node_fp_engine
+
+node_fp_engine --> node_visual
+node_fp_engine --> node_audio
+node_fp_engine --> node_temporal
+node_fp_engine --> node_semantic
+
+node_visual --> node_fusion
+node_audio --> node_fusion
+node_temporal --> node_fusion
+node_semantic --> node_fusion
+
+node_fusion --> node_graph
+node_graph --> node_detection
+node_detection --> node_predictive
+
+flowchart TD
+
+node_main["Main / API Entry"]
+node_orchestrator["ARES Orchestrator"]
+node_engine["ARES Engine"]
+node_ledger[("Immutable Ledger")]
+
+node_platforms(("External Platforms"))
+node_adapters["Platform Adapters"]
+
+node_detection["Detection Output"]
+node_workflow["Enforcement Workflow"]
+node_response["Response Engine"]
+
+node_commercial["Commercial Evidence"]
+node_network["Network Evidence"]
+
+node_main --> node_orchestrator
+node_orchestrator --> node_engine
+node_orchestrator --> node_ledger
+
+node_engine --> node_adapters
+node_adapters --> node_platforms
+
+node_platforms --> node_detection
+
+node_detection --> node_workflow
+node_workflow --> node_response
+
+node_response --> node_commercial
+node_detection --> node_network
 
 ## Getting Started
 1. Create and activate a virtual environment:
