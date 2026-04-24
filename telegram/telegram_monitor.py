@@ -78,7 +78,7 @@ match_store = MatchResultStore()
 # ---------------------------------------------------------------------------
 # Event handler — fires on every new message across all chats
 # ---------------------------------------------------------------------------
-@client.on(NewMessage)
+@client.on(NewMessage) # type: ignore
 async def handler(event):
     try:
         # ── 1. Skip non-media messages ──────────────────────────────────
