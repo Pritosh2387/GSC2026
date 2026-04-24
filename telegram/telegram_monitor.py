@@ -50,6 +50,8 @@ logging.basicConfig(
     ],
 )
 logger = logging.getLogger("sportguard.telegram")
+
+
 # Telegram credentials via environment variables
 from dotenv import load_dotenv
 
