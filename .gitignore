@@ -1,48 +1,52 @@
-# Core
+# =========================
+# Secrets (NEVER commit)
+# =========================
+.env
+.env.*
+*.session
+
+# =========================
+# Python cache
+# =========================
 __pycache__/
 *.py[cod]
 *$py.class
+
+# =========================
+# Runtime generated files
+# =========================
+media_downloads/
+reference_fingerprints.json
+telegram_alerts.json
+telegram_matches.json
+telegram_monitor.log
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Models / AI artifacts
+# =========================
+*.pkl
+*.keras
+model/
+
+# =========================
+# IDE files
+# =========================
+.vscode/
+.idea/
 .DS_Store
 
-# Virtual Environments
+# =========================
+# Virtual environments
+# =========================
 venv/
 env/
 
-# IDEs
-.vscode/
-.idea/
-
-# ARES Generated Files
-ares_ledger.json
-test_ledger.json
-
-# Telegram Integration Generated Files
-telegram_alerts.json
-telegram_matches.json
-reference_fingerprints.json
-telegram_monitor.log
-*.session
-
-# Remote/Other Project Files
-*.pkl
-.env
-.ipynb_checkpoints/
-*.keras
-model/
-final_implementation/*.keras
-# Secrets
-.env
-.env.*
-
-# Telegram Session Safety
-session*
-*.session-journal
-
-# Media Downloads
-media_downloads/
-
-# Logs
-*.log
-
-# OS Files
+# =========================
+# OS files
+# =========================
 Thumbs.db
