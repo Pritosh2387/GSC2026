@@ -343,7 +343,7 @@ def send_alert(match_data: Dict,
         import requests
         resp = requests.post(api_url, json=alert, timeout=5)
         if resp.status_code == 200:
-            logger.info(f"🔔 Alert sent to API: {api_url}")
+            logger.info(f" Alert sent to API: {api_url}")
         else:
             logger.warning(f"API responded with {resp.status_code}")
     except Exception as e:
