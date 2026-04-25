@@ -1,0 +1,12 @@
+{
+    "network_id": "NET_0",
+    "structure": {},
+    "evidence": {
+        "cluster": [
+            "account_gamma",
+            "account_delta"
+        ]
+    },
+    "impact_assessment": "Commercial Scale Operation",
+    "referral_ready": true
+}

@@ -25,5 +25,12 @@ model/
 # Virtual environments
 venv/
 env/
+.venv/
+
+# JS/Frontend
+node_modules/
+.next/
+dist/
+build/
 
 Thumbs.db

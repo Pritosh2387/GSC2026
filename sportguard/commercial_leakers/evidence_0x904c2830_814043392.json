@@ -1,0 +1,11 @@
+{
+    "user_id": "0x904c2830",
+    "offender_type": "COMMERCIAL_SCALE",
+    "evidence": {
+        "user_hash": "0x904c2830",
+        "device_hash": "0x1045211",
+        "tier_indicator": 64,
+        "session_ts": 814043392,
+        "region_hash": "0xa63051"
+    }
+}
