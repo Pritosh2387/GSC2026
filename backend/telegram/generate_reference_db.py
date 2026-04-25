@@ -50,7 +50,7 @@ REFERENCE_DB_PATH = os.path.join(
 def main():
 
     if not os.path.exists(REFERENCE_FOLDER):
-        print("❌ reference_media folder not found!")
+        print("reference_media folder not found!")
         return
 
     reference_entries = []
@@ -58,7 +58,7 @@ def main():
     files = os.listdir(REFERENCE_FOLDER)
 
     if not files:
-        print("❌ No files inside reference_media/")
+        print("No files inside reference_media/")
         return
 
     print(f"🔍 Processing {len(files)} reference files...")
@@ -73,10 +73,10 @@ def main():
         media_type = get_media_type(file_path)
 
         if media_type is None:
-            print(f"⏭️ Skipping unsupported file: {file_name}")
+            print(f"Skipping unsupported file: {file_name}")
             continue
 
-        print(f"📄 Processing: {file_name}")
+        print(f"Processing: {file_name}")
 
         # Generate fingerprint
         if media_type == "image":
@@ -85,7 +85,7 @@ def main():
             fingerprint = fingerprint_video(file_path)
 
         if fingerprint is None:
-            print(f"⚠️ Failed to fingerprint {file_name}")
+            print(f"Failed to fingerprint {file_name}")
             continue
 
         # ✅ FULL schema — matches ReferenceDatabase expectations
@@ -105,7 +105,7 @@ def main():
         json.dump(reference_entries, f, indent=4)
 
     print(
-        f"✅ Saved {len(reference_entries)} reference fingerprints!"
+        f"Saved {len(reference_entries)} reference fingerprints!"
     )
 
 
