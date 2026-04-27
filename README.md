@@ -19,7 +19,7 @@ This project helps content creators, broadcasters, and organizations detect pira
 
 ---
 
-# 🧠 How It Works
+# How It Works
 
 The system follows this detection pipeline:
 1. **Reference Content Registration**: Content owners register their media, which is then fingerprinted and stored in a database.
@@ -30,7 +30,7 @@ The system follows this detection pipeline:
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 Follow these instructions to get the project up and running on your local machine.
 
@@ -41,7 +41,7 @@ Follow these instructions to get the project up and running on your local machin
 - **npm**: 9.x or higher
 - **MongoDB**: A running MongoDB instance (Atlas or Local)
 
-## 🛠️ Backend Setup
+## Backend Setup
 
 1. **Navigate to the backend directory**:
    ```bash
@@ -78,7 +78,7 @@ Follow these instructions to get the project up and running on your local machin
    python main.py
    ```
 
-## 💻 Frontend Setup
+## Frontend Setup
 
 1. **Navigate to the frontend directory**:
    ```bash
@@ -98,7 +98,7 @@ Follow these instructions to get the project up and running on your local machin
 
 ---
 
-# 📊 Project Structure
+# Project Structure
 
 - `backend/`: FastAPI server, database logic, and Telegram monitor.
 - `frontend/`: Next.js dashboard for monitoring alerts and matches.
