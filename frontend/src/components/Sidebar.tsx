@@ -20,7 +20,11 @@ const NAV = [
   { label: "Telegram Monitor", href: "/dashboard/telegram", icon: Send },
   { label: "ARES Engine", href: "/dashboard/ares", icon: Shield },
   { label: "Deepfake Detector", href: "/dashboard/deepfake", icon: Video },
-  { label: "Register Content", href: "/dashboard/register-content", icon: FileUp },
+  {
+    label: "Register Content",
+    href: "/dashboard/register-content",
+    icon: FileUp,
+  },
 ];
 
 export default function Sidebar() {
@@ -36,9 +40,9 @@ export default function Sidebar() {
     <aside className="sidebar">
       {/* Logo */}
       <div className="sidebar-logo">
-        <div className="logo-icon">SG</div>
+        <div className="logo-icon">PK</div>
         <div>
-          <div className="logo-text">SportGuard</div>
+          <div className="logo-text">Piraksha</div>
           <div className="logo-sub">AI Platform</div>
         </div>
       </div>
@@ -70,7 +74,13 @@ export default function Sidebar() {
         <button
           onClick={handleLogout}
           className="sidebar-link"
-          style={{ border: "none", background: "none", cursor: "pointer", width: "100%", textAlign: "left" }}
+          style={{
+            border: "none",
+            background: "none",
+            cursor: "pointer",
+            width: "100%",
+            textAlign: "left",
+          }}
         >
           <LogOut size={18} className="sidebar-icon" />
           Logout

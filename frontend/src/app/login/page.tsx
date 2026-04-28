@@ -32,28 +32,89 @@ export default function LoginPage() {
     <div className="auth-page bg-dots">
       <div className="glass-card auth-card animate-fade-in">
         {/* Logo */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 48 }}>
-          <Link href="/" className="logo-icon" style={{ width: 64, height: 64, borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: 48,
+          }}
+        >
+          <Link
+            href="/"
+            className="logo-icon"
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: 16,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+            }}
+          >
             <ShieldCheck size={36} />
           </Link>
         </div>
 
-        <h1 style={{ fontSize: "2rem", fontWeight: 800, textAlign: "center", color: "var(--lp-text-main)", marginBottom: 12, letterSpacing: "-0.03em" }}>
+        <h1
+          style={{
+            fontSize: "2rem",
+            fontWeight: 800,
+            textAlign: "center",
+            color: "var(--lp-text-main)",
+            marginBottom: 12,
+            letterSpacing: "-0.03em",
+          }}
+        >
           Sign in
         </h1>
-        <p style={{ textAlign: "center", color: "var(--lp-text-sec)", marginBottom: 40, fontSize: "1.125rem" }}>
+        <p
+          style={{
+            textAlign: "center",
+            color: "var(--lp-text-sec)",
+            marginBottom: 40,
+            fontSize: "1.125rem",
+          }}
+        >
           Access your content protection dashboard.
         </p>
 
-        {error && <div style={{ background: "#fef2f2", border: "1px solid #fee2e2", padding: "16px", borderRadius: 12, color: "#b91c1c", fontSize: 14, marginBottom: 32, fontWeight: 500 }}>{error}</div>}
+        {error && (
+          <div
+            style={{
+              background: "#fef2f2",
+              border: "1px solid #fee2e2",
+              padding: "16px",
+              borderRadius: 12,
+              color: "#b91c1c",
+              fontSize: 14,
+              marginBottom: 32,
+              fontWeight: 500,
+            }}
+          >
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: 24 }}>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 700, color: "var(--sg-text-muted)", marginBottom: 10, textTransform: "uppercase", letterSpacing: "0.05em" }}>Corporate Email</label>
+            <label
+              style={{
+                display: "block",
+                fontSize: 11,
+                fontWeight: 700,
+                color: "var(--sg-text-muted)",
+                marginBottom: 10,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            >
+              Corporate Email
+            </label>
             <input
               type="email"
               className="input-field"
-              placeholder="operator@sportguard.ai"
+              placeholder="operator@piraksha.ai"
               style={{ height: 50 }}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +123,19 @@ export default function LoginPage() {
           </div>
 
           <div style={{ marginBottom: 32 }}>
-            <label style={{ display: "block", fontSize: 11, fontWeight: 700, color: "var(--sg-text-muted)", marginBottom: 10, textTransform: "uppercase", letterSpacing: "0.05em" }}>Encrypted Password</label>
+            <label
+              style={{
+                display: "block",
+                fontSize: 11,
+                fontWeight: 700,
+                color: "var(--sg-text-muted)",
+                marginBottom: 10,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}
+            >
+              Encrypted Password
+            </label>
             <input
               type="password"
               className="input-field"
@@ -84,9 +157,25 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div style={{ textAlign: "center", marginTop: 40, fontSize: 14, color: "var(--lp-text-sec)" }}>
-          New to SportGuard?{" "}
-          <Link href="/register" style={{ color: "var(--lp-accent)", fontWeight: 700, textDecoration: "none" }}>Create an account</Link>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: 40,
+            fontSize: 14,
+            color: "var(--lp-text-sec)",
+          }}
+        >
+          New to Piraksha?{" "}
+          <Link
+            href="/register"
+            style={{
+              color: "var(--lp-accent)",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
+          >
+            Create an account
+          </Link>
         </div>
       </div>
     </div>

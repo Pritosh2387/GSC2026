@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SportGuard AI — Piracy Detection & Enforcement",
+  title: "Piraksha AI — Piracy Detection & Enforcement",
   description:
     "AI-powered piracy detection system with real-time monitoring, forensic fingerprinting, and automated enforcement.",
 };

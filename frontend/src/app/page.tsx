@@ -28,7 +28,7 @@ export default function LandingPage() {
             >
               <ShieldCheck size={20} />
             </div>
-            SportGuard
+            Piraksha
           </Link>
 
           <div className="lp-nav-links">
@@ -115,7 +115,6 @@ export default function LandingPage() {
               alignItems: "center",
             }}
           >
-
             {/* Image */}
             <img
               src="/home.png"
@@ -253,7 +252,7 @@ export default function LandingPage() {
           <div className="lp-grid">
             {[
               {
-                q: "SportGuard has simplified our rights management completely. It just works.",
+                q: "Piraksha has simplified our rights management completely. It just works.",
                 n: "Alex Thompson",
                 r: "Digital Director",
                 avatar: "/avatar-alex.svg",
@@ -497,7 +496,7 @@ export default function LandingPage() {
                 >
                   <ShieldCheck size={20} />
                 </div>
-                SportGuard
+                Piraksha
               </Link>
               <p style={{ maxWidth: 300 }}>
                 Leading digital rights management platform for sports media and
@@ -587,7 +586,7 @@ export default function LandingPage() {
           <div
             style={{ marginTop: 64, textAlign: "center", fontSize: "0.875rem" }}
           >
-            © {new Date().getFullYear()} SportGuard. All rights reserved.
+            © {new Date().getFullYear()} Piraksha. All rights reserved.
           </div>
         </div>
       </footer>
