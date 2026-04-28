@@ -1,0 +1,166 @@
+2026-04-28 19:33:16 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:33:16 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:33:16 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:34:20 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:34:20 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:34:20 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:34:20 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:45:49 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:45:49 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:45:49 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:45:59 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:45:59 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:45:59 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:45:59 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:46:48 | piraksha.routes.auth           | INFO     | User logged in: testing@gmail.com
+2026-04-28 19:46:49 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:46:49 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:46:50 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:46:50 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:47:01 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:47:01 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:47:05 | piraksha.routes.telegram       | INFO     | Telegram monitor start requested by testing@gmail.com
+2026-04-28 19:47:08 | piraksha.telegram_service      | INFO     | Telegram Monitor started
+2026-04-28 19:47:10 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:47:10 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:47:11 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:47:11 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:47:20 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:47:20 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:47:21 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:47:21 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:47:22 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:47:22 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:48:08 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:48:08 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:48:08 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:48:08 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:48:58 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:48:58 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:48:59 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:48:59 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:06 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:49:06 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:07 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:49:07 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:16 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:49:16 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:26 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:49:26 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:26 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 19:49:27 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 19:49:27 | piraksha.telegram_service      | INFO     | Telegram Monitor stopped
+2026-04-28 19:49:31 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:49:31 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:49:31 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:49:56 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:49:56 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:49:56 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:49:56 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:49:57 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:49:57 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:58 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:49:58 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:49:58 | piraksha.routes.telegram       | INFO     | Telegram monitor start requested by testing@gmail.com
+2026-04-28 19:50:01 | piraksha.telegram_service      | INFO     | Telegram Monitor started
+2026-04-28 19:50:45 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 19:50:45 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 19:50:45 | piraksha.telegram_service      | INFO     | Telegram Monitor stopped
+2026-04-28 19:50:51 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:50:51 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:50:51 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:51:30 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:51:30 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:51:30 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:51:30 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:51:30 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 19:51:30 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 19:51:35 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:51:35 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:51:35 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:52:02 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:52:02 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:52:02 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:52:02 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:52:53 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 19:52:53 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 19:52:57 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:52:57 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:52:57 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:53:24 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:53:24 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:53:24 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:53:24 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:53:50 | piraksha.routes.telegram       | INFO     | Telegram monitor start requested by testing@gmail.com
+2026-04-28 19:53:53 | piraksha.telegram_service      | INFO     | Telegram Monitor started
+2026-04-28 19:57:16 | piraksha.routes.telegram       | INFO     | Telegram monitor stopped by testing@gmail.com
+2026-04-28 19:57:16 | piraksha.telegram_service      | INFO     | Telegram Monitor stopped
+2026-04-28 19:57:17 | piraksha.routes.telegram       | INFO     | Telegram monitor start requested by testing@gmail.com
+2026-04-28 19:57:19 | piraksha.telegram_service      | INFO     | Telegram Monitor started
+2026-04-28 19:57:26 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:57:26 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:57:26 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:57:26 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:57:36 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:57:36 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:57:47 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:57:47 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:57:56 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:57:56 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:58:06 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:58:06 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:58:13 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 19:58:13 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 19:58:13 | piraksha.telegram_service      | INFO     | Telegram Monitor stopped
+2026-04-28 19:58:19 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:58:19 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 19:58:19 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 19:58:46 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 19:58:46 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 19:58:46 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 19:58:46 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 19:58:47 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:58:47 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:58:47 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:58:47 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:58:48 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:58:48 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:58:49 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:58:49 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 19:58:56 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 19:58:56 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:00:03 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:00:03 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:00:48 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 20:00:48 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 20:00:51 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:00:51 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 20:00:51 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:01:16 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 20:01:16 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 20:01:16 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 20:01:16 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 20:01:17 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:01:17 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:02:03 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:02:03 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:02:14 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:02:14 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:02:16 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:02:16 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:02:27 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:02:27 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:02:27 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:02:27 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:02:35 | piraksha.routes.telegram       | INFO     | Telegram monitor start requested by testing@gmail.com
+2026-04-28 20:02:37 | piraksha.telegram_service      | INFO     | Telegram Monitor started
+2026-04-28 20:03:30 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:03:30 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:03:30 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:03:30 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:03:40 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:03:40 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:03:51 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:03:51 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:04:01 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
+2026-04-28 20:04:01 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com

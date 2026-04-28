@@ -46,16 +46,16 @@ export default function DashboardPage() {
           marginBottom: 60,
         }}
       >
-        <StatsCard label="Alerts" value={stats?.alerts ?? "—"} icon={Bell} delay={1} />
+        <StatsCard label="Alerts" value={stats?.overview.total_alerts ?? "—"} icon={Bell} delay={1} />
         <StatsCard
           label="Matches"
-          value={stats?.matches ?? "—"}
+          value={stats?.overview.total_detections ?? "—"}
           icon={Shield}
           delay={2}
         />
         <StatsCard
           label="Monitoring"
-          value={stats?.content ?? "—"}
+          value={stats?.overview.registered_media ?? "—"}
           icon={FileUp}
           delay={3}
         />
@@ -65,6 +65,70 @@ export default function DashboardPage() {
           icon={Send}
           delay={4}
         />
+      </div>
+
+      {/* Analytics Summary */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 32,
+          marginBottom: 60,
+        }}
+      >
+        {/* Severity Breakdown */}
+        <div className="glass-card" style={{ padding: 32 }}>
+          <h3 style={{ fontSize: "1.125rem", fontWeight: 700, marginBottom: 24 }}>Severity Distribution</h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {["critical", "high", "medium", "low"].map((sev) => {
+              const count = stats?.severity?.[sev] ?? 0;
+              const total = stats?.overview?.total_alerts || 1;
+              const percent = Math.round((count / total) * 100);
+              return (
+                <div key={sev}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>
+                    <span style={{ color: `var(--sg-${sev === "critical" ? "danger" : sev})` }}>{sev}</span>
+                    <span style={{ color: "var(--lp-text-sec)" }}>{count} ({percent}%)</span>
+                  </div>
+                  <div style={{ height: 6, background: "var(--lp-alt)", borderRadius: 3, overflow: "hidden" }}>
+                    <div 
+                      style={{ 
+                        height: "100%", 
+                        width: `${percent}%`, 
+                        background: `var(--sg-${sev === "critical" ? "danger" : sev})`,
+                        transition: "width 1s ease-out"
+                      }} 
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Top Channels */}
+        <div className="glass-card" style={{ padding: 32 }}>
+          <h3 style={{ fontSize: "1.125rem", fontWeight: 700, marginBottom: 24 }}>Top Infringing Channels</h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {stats?.top_channels && stats.top_channels.length > 0 ? (
+              stats.top_channels.map((chan, idx) => (
+                <div key={idx} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", background: "var(--lp-alt)", borderRadius: 12 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div style={{ width: 24, height: 24, borderRadius: "50%", background: "var(--lp-accent-glow)", color: "var(--lp-accent)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800 }}>
+                      {idx + 1}
+                    </div>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: "var(--lp-text-main)" }}>{chan.channel}</span>
+                  </div>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: "var(--lp-accent)" }}>{chan.violations} violations</span>
+                </div>
+              ))
+            ) : (
+              <div style={{ textAlign: "center", padding: 40, color: "var(--lp-text-sec)" }}>
+                No channel data available yet.
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       <div

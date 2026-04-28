@@ -43,7 +43,7 @@ export async function apiFetch<T = unknown>(
 
   if (!res.ok) {
     const body = await res.json().catch(() => ({}));
-    throw new Error(body.detail || `API error ${res.status}`);
+    throw new Error(body.detail || body.error || `API error ${res.status}`);
   }
 
   return res.json() as Promise<T>;
@@ -60,42 +60,56 @@ export interface AuthResponse {
 }
 
 export async function register(name: string, email: string, password: string): Promise<AuthResponse> {
-  return apiFetch<AuthResponse>("/auth/register", {
+  return apiFetch<AuthResponse>("/api/register", {
     method: "POST",
     body: JSON.stringify({ name, email, password }),
   });
 }
 
 export async function login(email: string, password: string): Promise<AuthResponse> {
-  return apiFetch<AuthResponse>("/auth/login", {
+  return apiFetch<AuthResponse>("/api/login", {
     method: "POST",
     body: JSON.stringify({ email, password }),
   });
 }
 
 export async function getMe() {
-  return apiFetch<AuthResponse["user"]>("/auth/me");
+  return apiFetch<AuthResponse["user"]>("/api/me");
 }
 
 /* ------------------------------------------------------------------ */
-/*  Dashboard                                                          */
+/*  Dashboard & Analytics                                               */
 /* ------------------------------------------------------------------ */
 
 export interface DashboardStats {
-  alerts: number;
-  matches: number;
-  content: number;
-  users: number;
-  unresolved_alerts: number;
-  telegram_running: boolean;
+  overview: {
+    total_alerts: number;
+    unresolved_alerts: number;
+    total_detections: number;
+    registered_media: number;
+    registered_fingerprints: number;
+    total_users: number;
+    enforcement_actions: number;
+  };
+  severity: Record<string, number>;
+  recent_7_days: {
+    alerts: number;
+    detections: number;
+  };
+  enforcement: {
+    takedowns: number;
+    high_severity_alerts: number;
+  };
+  top_channels: Array<{ channel: string; violations: number }>;
+  generated_at: string;
 }
 
 export async function getDashboardStats(): Promise<DashboardStats> {
-  return apiFetch<DashboardStats>("/dashboard/stats");
+  return apiFetch<DashboardStats>("/api/analytics/dashboard");
 }
 
 /* ------------------------------------------------------------------ */
-/*  Alerts                                                             */
+/*  Alerts & Enforcement                                                */
 /* ------------------------------------------------------------------ */
 
 export interface Alert {
@@ -124,11 +138,16 @@ export async function getAlerts(params?: {
   if (params?.limit) q.set("limit", String(params.limit));
   if (params?.skip) q.set("skip", String(params.skip));
   const qs = q.toString();
-  return apiFetch<Alert[]>(`/alerts${qs ? `?${qs}` : ""}`);
+  return apiFetch<Alert[]>(`/api/alerts${qs ? `?${qs}` : ""}`);
 }
 
 export async function resolveAlert(alertId: string) {
-  return apiFetch(`/alerts/${alertId}/resolve`, { method: "PATCH" });
+  return apiFetch(`/api/alerts/${alertId}/resolve`, { method: "PATCH" });
+}
+
+export async function getAresHistory(limit = 20) {
+  const res = await apiFetch<{ logs: any[]; count: number }>(`/api/enforcement/logs?limit=${limit}`);
+  return res.logs;
 }
 
 /* ------------------------------------------------------------------ */
@@ -136,27 +155,40 @@ export async function resolveAlert(alertId: string) {
 /* ------------------------------------------------------------------ */
 
 export async function getTelegramStatus() {
-  return apiFetch<{ running: boolean; api_id: string; session_exists: boolean }>("/telegram/status");
+  return apiFetch<{ 
+    running: boolean; 
+    api_id: string; 
+    session_exists: boolean;
+    stats: {
+      total_matches: number;
+      unique_channels: number;
+      media_captured: number;
+      forensic_storage_mb: number;
+      average_confidence: number;
+      last_match_time: string;
+    }
+  }>("/api/telegram/status");
 }
 
 export async function startTelegram() {
-  return apiFetch("/telegram/start", { method: "POST" });
+  return apiFetch("/api/telegram/start-monitor", { method: "POST" });
 }
 
 export async function stopTelegram() {
-  return apiFetch("/telegram/stop", { method: "POST" });
+  return apiFetch("/api/telegram/stop-monitor", { method: "POST" });
 }
 
 /* ------------------------------------------------------------------ */
-/*  Matches                                                            */
+/*  Matches / Detections                                               */
 /* ------------------------------------------------------------------ */
 
 export async function getMatches(limit = 50, skip = 0) {
-  return apiFetch<unknown[]>(`/matches?limit=${limit}&skip=${skip}`);
+  const res = await apiFetch<{ results: any[]; count: number }>(`/api/detection/results?limit=${limit}&skip=${skip}`);
+  return res.results;
 }
 
 /* ------------------------------------------------------------------ */
-/*  ARES                                                               */
+/*  ARES Enforcement                                                   */
 /* ------------------------------------------------------------------ */
 
 export interface AresInput {
@@ -173,6 +205,7 @@ export interface AresInput {
 }
 
 export interface AresResult {
+  action_id: string;
   category: string;
   severity_score: number;
   ai_analysis: {
@@ -182,32 +215,31 @@ export interface AresResult {
     commercial_intent: string;
     suggested_action: string;
   };
+  blockchain_hash: string;
 }
 
 export async function analyzeAres(data: AresInput): Promise<AresResult> {
-  return apiFetch<AresResult>("/ares/analyze", {
+  return apiFetch<AresResult>("/api/enforcement/alert", {
     method: "POST",
     body: JSON.stringify(data),
   });
 }
 
-export async function getAresHistory(limit = 20) {
-  return apiFetch<unknown[]>(`/ares/history?limit=${limit}`);
-}
-
 /* ------------------------------------------------------------------ */
-/*  Deepfake                                                           */
+/*  Deepfake Detection                                                 */
 /* ------------------------------------------------------------------ */
 
 export interface DeepfakeResult {
   prediction: number;
   probability: number;
+  label: string;
+  model_available: boolean;
 }
 
 export async function predictVideo(file: File): Promise<DeepfakeResult> {
   const fd = new FormData();
   fd.append("file", file);
-  return apiFetch<DeepfakeResult>("/predict-video", {
+  return apiFetch<DeepfakeResult>("/api/deepfake/analyze", {
     method: "POST",
     body: fd,
   });
@@ -222,7 +254,7 @@ export async function registerContent(file: File, contentName: string) {
   fd.append("file", file);
   fd.append("content_name", contentName);
   return apiFetch<{ status: string; content_name: string; media_type: string; fingerprint_dim: number }>(
-    "/register-content",
+    "/api/media/register",
     { method: "POST", body: fd }
   );
 }

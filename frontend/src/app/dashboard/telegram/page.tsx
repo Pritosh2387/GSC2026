@@ -5,13 +5,25 @@ import { Send, Play, Square, Info, ShieldCheck } from "lucide-react";
 import { apiFetch } from "@/lib/api";
 
 export default function TelegramMonitorPage() {
-  const [status, setStatus] = useState<{ running: boolean; api_id: string; session_exists: boolean } | null>(null);
+  const [status, setStatus] = useState<{ 
+    running: boolean; 
+    api_id: string; 
+    session_exists: boolean;
+    stats?: {
+      total_matches: number;
+      unique_channels: number;
+      media_captured: number;
+      forensic_storage_mb: number;
+      average_confidence: number;
+      last_match_time: string;
+    }
+  } | null>(null);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
 
   async function fetchStatus() {
     try {
-      const data = await apiFetch("/telegram/status");
+      const data = await apiFetch("/api/telegram/status");
       setStatus(data as { running: boolean; api_id: string; session_exists: boolean });
     } catch (err) {
       console.error("Failed to fetch status", err);
@@ -29,7 +41,7 @@ export default function TelegramMonitorPage() {
   async function handleToggle() {
     setActionLoading(true);
     try {
-      const endpoint = status?.running ? "/telegram/stop" : "/telegram/start";
+      const endpoint = status?.running ? "/api/telegram/stop-monitor" : "/api/telegram/start-monitor";
       await apiFetch(endpoint, { method: "POST" });
       await fetchStatus();
     } catch (err) {
@@ -95,6 +107,42 @@ export default function TelegramMonitorPage() {
                 )
               )}
             </button>
+          </div>
+
+          {/* Stats Cards Row 1 */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+            <div className="glass-card" style={{ padding: 24, textAlign: "center" }}>
+               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--lp-text-sec)", textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.05em" }}>Monitored Channels</div>
+               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--lp-text-main)" }}>{status?.stats?.unique_channels ?? 0}</div>
+            </div>
+            <div className="glass-card" style={{ padding: 24, textAlign: "center" }}>
+               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--lp-text-sec)", textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.05em" }}>Media Captured</div>
+               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--lp-text-main)" }}>{status?.stats?.media_captured ?? 0}</div>
+            </div>
+            <div className="glass-card" style={{ padding: 24, textAlign: "center" }}>
+               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--lp-text-sec)", textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.05em" }}>Total Matches</div>
+               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--lp-accent)" }}>{status?.stats?.total_matches ?? 0}</div>
+            </div>
+          </div>
+
+          {/* Stats Cards Row 2 */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
+            <div className="glass-card" style={{ padding: 24, textAlign: "center" }}>
+               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--lp-text-sec)", textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.05em" }}>Forensic Storage</div>
+               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--lp-text-main)" }}>{status?.stats?.forensic_storage_mb ?? 0} <span style={{ fontSize: 14 }}>MB</span></div>
+            </div>
+            <div className="glass-card" style={{ padding: 24, textAlign: "center" }}>
+               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--lp-text-sec)", textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.05em" }}>Avg. Confidence</div>
+               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--lp-text-main)" }}>{status?.stats?.average_confidence ?? 0}%</div>
+            </div>
+            <div className="glass-card" style={{ padding: 24, textAlign: "center" }}>
+               <div style={{ fontSize: 11, fontWeight: 700, color: "var(--lp-text-sec)", textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.05em" }}>Last Detection</div>
+               <div style={{ fontSize: "1rem", fontWeight: 800, color: "var(--lp-text-main)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                 {status?.stats?.last_match_time && status.stats.last_match_time !== "Never" 
+                   ? new Date(status.stats.last_match_time).toLocaleTimeString() 
+                   : "Never"}
+               </div>
+            </div>
           </div>
 
           {/* Service Details Grid */}
