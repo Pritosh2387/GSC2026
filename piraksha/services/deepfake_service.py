@@ -20,6 +20,7 @@ _tf_available = False
 _cv2_available = False
 
 MODEL_PATH = str(settings.BACKEND_DIR / "cnn_lstm_new_model.keras")
+GOOGLE_DRIVE_ID = "1o_jinpmPFLad1iGhAyapBbtpUT39d7Hy"
 NUM_FRAMES = 20
 FRAME_SIZE = (112, 112)
 
@@ -39,16 +40,39 @@ def _try_load_dependencies():
         logger.warning("TensorFlow not available — deepfake service disabled")
 
 
+def _download_model():
+    """Attempt to download the model from Google Drive if missing."""
+    import gdown
+    url = f"https://drive.google.com/uc?id={GOOGLE_DRIVE_ID}"
+    
+    if not os.path.exists(MODEL_PATH) or os.path.getsize(MODEL_PATH) < 10000:
+        logger.info(f"Model missing or corrupted. Downloading from Google Drive: {GOOGLE_DRIVE_ID}")
+        try:
+            gdown.download(url, MODEL_PATH, quiet=False, fuzzy=True)
+            if os.path.exists(MODEL_PATH) and os.path.getsize(MODEL_PATH) > 10000:
+                logger.info("Deepfake model downloaded successfully.")
+                return True
+        except Exception as e:
+            logger.error(f"Failed to download deepfake model: {e}")
+            return False
+    return True
+
+
 def load_model() -> bool:
     """
     Attempt to load the deepfake model.
-    Returns True if the model was successfully loaded.
+    Downloads it from Drive if not found.
     """
     global _model
     _try_load_dependencies()
 
     if not _tf_available:
         logger.info("Skipping model load (TensorFlow unavailable)")
+        return False
+
+    # Ensure model exists
+    if not _download_model():
+        logger.warning("Deepfake model could not be downloaded/found.")
         return False
 
     try:

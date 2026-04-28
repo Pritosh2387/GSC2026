@@ -164,3 +164,26 @@
 2026-04-28 20:03:51 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
 2026-04-28 20:04:01 | piraksha.analytics_service     | INFO     | Dashboard metrics generated and stored
 2026-04-28 20:04:01 | piraksha.routes.analytics      | INFO     | Dashboard metrics fetched by testing@gmail.com
+2026-04-28 20:21:00 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:21:00 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 20:21:00 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:21:25 | piraksha.deepfake_service      | WARNING  | Deepfake model not loaded: File not found: filepath=C:\Users\Hp\OneDrive\Desktop\Hacathons\GSC 2026\backend\cnn_lstm_new_model.keras. Please ensure the file is an accessible `.keras` zip file.
+2026-04-28 20:21:25 | piraksha.main                  | WARNING  | Deepfake model not available (TF/OpenCV missing or model file absent).
+2026-04-28 20:21:25 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 20:21:25 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 20:23:53 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 20:23:53 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 20:24:06 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:24:06 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 20:24:06 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:24:39 | piraksha.main                  | WARNING  | Deepfake model load skipped: No module named 'gdown'
+2026-04-28 20:24:39 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 20:24:39 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
+2026-04-28 20:25:34 | piraksha.main                  | INFO     | PIRAKSHA API shutting down...
+2026-04-28 20:25:34 | piraksha.main                  | INFO     | Shutdown complete.
+2026-04-28 20:25:37 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:25:37 | piraksha.main                  | INFO     |   PIRAKSHA API  —  Starting up
+2026-04-28 20:25:37 | piraksha.main                  | INFO     | ============================================================
+2026-04-28 20:26:04 | piraksha.main                  | WARNING  | Deepfake model load skipped: No module named 'gdown'
+2026-04-28 20:26:04 | piraksha.main                  | INFO     | Docs available at: http://127.0.0.1:8000/docs
+2026-04-28 20:26:04 | piraksha.main                  | INFO     | PIRAKSHA API is ready.
