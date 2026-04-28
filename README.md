@@ -1,4 +1,4 @@
-# Paraksha — Telegram Piracy Detection System
+# Piraksha — Telegram Piracy Detection System
 
 SportGuard AI is an AI-powered system that monitors Telegram channels in real time and detects unauthorized sharing of protected media using perceptual fingerprinting and similarity matching.
 
