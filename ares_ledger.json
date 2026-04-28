@@ -1,0 +1,53 @@
+[
+    {
+        "action_id": "ACT_2E6BFA77",
+        "match_id": "M_ID_9921",
+        "timestamp": "2026-04-28T16:16:50.547623",
+        "category": "takedown",
+        "severity_score": 0.98,
+        "platform_response": {
+            "platform": "youtube",
+            "api_version": "v3",
+            "claim_id": "e5ebfab1-1cd0-4a75-b1a5-2f9da6f9df63",
+            "status": "success",
+            "internal_logic": "copyright_strike_issued",
+            "policy_applied": "rule_set_ru_v1"
+        },
+        "blockchain_hash": "e760a32b000bc81353937b4c1f534281793d1c88bb39b00a529b68fdfb588eee",
+        "previous_block_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+        "action_id": "ACT_F5B53D20",
+        "match_id": "M_ID_8832",
+        "timestamp": "2026-04-28T16:16:51.553372",
+        "category": "monitor",
+        "severity_score": 0.4275,
+        "platform_response": {
+            "platform": "tiktok",
+            "request_id": "a3a8b659-fbc8-4840-a248-b3af310c23c2",
+            "creator_fund_status": "unaffected",
+            "shadow_ban_risk": "low"
+        },
+        "blockchain_hash": "7869356ef988fbaec4ea53ada0ba557e9daab39c7a5313fe14da6153976616f8",
+        "previous_block_hash": "e760a32b000bc81353937b4c1f534281793d1c88bb39b00a529b68fdfb588eee"
+    },
+    {
+        "action_id": "ACT_FA70EA6B",
+        "match_id": "M_ID_7743",
+        "timestamp": "2026-04-28T16:16:52.560301",
+        "category": "license",
+        "severity_score": 0.4675,
+        "platform_response": {
+            "platform": "meta",
+            "rights_manager_ref": "rm_98ef5383",
+            "assets_affected": [
+                "facebook_video",
+                "instagram_reel"
+            ],
+            "resolution": "action_applied",
+            "action_type": "license"
+        },
+        "blockchain_hash": "1c98a011deb816ae640604121d6458b141b0366c217ccea00dcd8fcd7bf367fb",
+        "previous_block_hash": "7869356ef988fbaec4ea53ada0ba557e9daab39c7a5313fe14da6153976616f8"
+    }
+]
