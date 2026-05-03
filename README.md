@@ -7,17 +7,6 @@ SportGuard AI is a content-protection project with four main surfaces:
 - A deepfake detection pipeline backed by a local Keras model artifact.
 - Supporting ML and simulation scripts for model validation and ARES testing.
 
-## Fix Summary
-
-These are the main fixes now reflected in the repo:
-
-- Deepfake detection now looks for a real local model file instead of silently behaving like a placeholder.
-- The backend can auto-download the trained deepfake model when it is missing and `gdown` is installed.
-- The local model artifact lives in `ml/cnn_lstm_new_model.keras`, while Python runtime dependencies live in `.venv`.
-- `ml/model.py` now works as a local download-and-validate helper instead of using a Colab-only `/content` path.
-- The deepfake dashboard now shows actual inference metadata and computed analysis details.
-- The backend should be started with the project virtualenv so TensorFlow, OpenCV, and the deepfake loader are available.
-
 ## Prerequisites
 
 - Python `3.10+`
