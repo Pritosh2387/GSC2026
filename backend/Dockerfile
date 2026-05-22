@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /app/
-WORKDIR /app
+WORKDIR /app/backend
 
 # Install Python dependencies from whichever requirements file is present
 RUN pip install --upgrade pip \
