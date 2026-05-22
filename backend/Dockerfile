@@ -12,10 +12,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsndfile1 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip && pip install --no-cache-dir -r /app/requirements.txt
 COPY . /app/
 WORKDIR /app
+
+# Install Python dependencies from whichever requirements file is present
+RUN pip install --upgrade pip \
+        && if [ -f backend/requirements.txt ]; then \
+                 pip install --no-cache-dir -r backend/requirements.txt; \
+             elif [ -f requirements.txt ]; then \
+                 pip install --no-cache-dir -r requirements.txt; \
+             else \
+                 echo "No requirements file found; continuing without installing Python packages"; \
+             fi
 
 EXPOSE 8000
 ENV PORT 8000
