@@ -18,14 +18,19 @@ WORKDIR /app
 # Install Python dependencies from whichever requirements file is present
 RUN pip install --upgrade pip \
         && if [ -f backend/requirements.txt ]; then \
-                 pip install --no-cache-dir -r backend/requirements.txt; \
+                 pip install --no-cache-dir --root-user-action=ignore -r backend/requirements.txt; \
              elif [ -f requirements.txt ]; then \
-                 pip install --no-cache-dir -r requirements.txt; \
+                 pip install --no-cache-dir --root-user-action=ignore -r requirements.txt; \
              else \
                  echo "No requirements file found; continuing without installing Python packages"; \
              fi
+
+# Create an unprivileged user and take ownership of the app directory
+RUN adduser --disabled-password --gecos "" appuser \
+    && chown -R appuser:appuser /app
 
 EXPOSE 8000
 ENV PORT 8000
 
 CMD ["sh", "-c", "uvicorn api:app --host 0.0.0.0 --port ${PORT:-8000}"]
+USER appuser
