@@ -40,7 +40,7 @@ Notes:
 ### 1. Create the virtualenv
 
 ```bash
-cd /Users/aadvikchaturvedi/Documents/googleSolution
+cd /Users/googleSolution
 python3 -m venv .venv
 source .venv/bin/activate
 ```
